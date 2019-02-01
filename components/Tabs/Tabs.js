@@ -17,41 +17,41 @@ class TabLink {
     this.tabItem = new TabItem(this.tabItem);
     
     // Add a click event listener on this instance, calling the select method on click
-    link.addEventListener('click', () => this.linkClick() );
-  }
+    element.addEventListener('click', () => this.select());
+  };
   
 
   select() {
     // Get all of the elements with the tabs-link class
-    const links =document.querySelectorAll("tabs-link");
+    const links = document.querySelectorAll(".tabs-link");
 
     // Using a loop or the forEach method remove the 'tabs-link-selected' class from all of the links
-    links = Array.from(links).forEach(link.removeAttribute("class", "tabs-link-selected"));
+    links.forEach(link.class.list.add("tabs-link-selected"));
 
     // Add a class named "tabs-link-selected" to this link
     this.element.classList.add("tabs.link-selected");
     
     // Call the select method on the item associated with this link
-    this.links.classList.add("tabs.link-selected");
+    
   }
 }
 
-// class TabItem {
-//   constructor(element) {
-//     // Assign this.element to the passed in element
-//     this.element = element;
-//   }
+class TabItem {
+  constructor(element) {
+    // Assign this.element to the passed in element
+    this.element = element;
+  }
 
-//   select() {
-//     // Select all ".tabs-item" elements from the DOM
-//     const items = document.querySelectorAll(".tabs-item");
+  select() {
+    // Select all ".tabs-item" elements from the DOM
+    const items = document.querySelectorAll(".tabs-item");
 
-//     // Remove the class "tabs-item-selected" from each element
-//     this.element.classList.toggle("tabs-item-selected");
-//     // Add a class named "tabs-item-selected" to this element
-//     this.element.classList.toggle("tabs-item");
-//   }
-// }
+    // Remove the class "tabs-item-selected" from each element
+    this.element.classList.toggle("tabs-item-selected");
+    // Add a class named "tabs-item-selected" to this element
+    this.element.classList.toggle("tabs-item");
+  }
+}
 
 // /* START HERE: 
 
@@ -64,5 +64,5 @@ class TabLink {
 
 // */
 
-// links = document.querySelectorAll(".tabs-link");
-// links.forEach( link => new TabLink(link));
+links = document.querySelectorAll(".tabs-link");
+links.forEach( link => new TabLink(link));
